@@ -83,6 +83,40 @@ function trimEmptyLines(&$lines) {
     }
 }
 
+function parseDocMetadata($doc, $className, $methodName, &$parameterName = null) {
+    if (version_compare(PHP_VERSION, '7.0.0', '<')) {
+        return "";
+    }
+
+    $key = is_null($parameterName) ? "return" : "params";
+    $methodName = preg_replace("/_$/", "", $methodName);
+
+    if (!array_key_exists("methods", $doc[$className]) || !array_key_exists($methodName, $doc[$className]["methods"])) {
+        return "";
+    }
+
+    $methodMetadata = $doc[$className]["methods"][$methodName];
+    $metadata = array_key_exists($key, $methodMetadata) ? $methodMetadata[$key] : null;
+
+    if (!is_null($parameterName)) {
+        $metadata = $metadata[$parameterName];
+    }
+
+    $type = is_array($metadata) && array_key_exists('type', $metadata) ? "{$metadata['type']}" : "";
+
+    if (strpos($type, "|") !== false) {
+        return "";
+    }
+
+    if (!is_null($parameterName)) {
+        $type = "$type ";
+    } elseif ($type) {
+        $type = ": $type";
+    }
+
+    return $type;
+}
+
 function writeCommentLines($file, $lines, $indent) {
     foreach($lines as $line) {
         $commentLine = str_pad("", strlen(INDENT) * $indent, INDENT, STR_PAD_LEFT) . DOC_COMMENT_LINE . "$line";
@@ -205,15 +239,20 @@ function writeConstantDoc($doc, $file, $class, $constantName) {
     fwrite($file, INDENT . DOC_COMMENT_FOOTER);
 }
 
-function writeConstant($doc, $file, $class, $constantName, $constantValue) {
+function writeConstant($doc, $file, $class, $constantName, $constantValue, &$singleEOL) {
+    if ($singleEOL) {
+        fwrite($file, PHP_EOL);
+        $singleEOL = false;
+    } else {
+        fwrite($file, PHP_EOL . PHP_EOL);
+    }
     writeConstantDoc($doc, $file, $class, $constantName);
 
     if (is_int($constantValue)) {
-        fwrite($file, INDENT . "const $constantName = $constantValue;" . PHP_EOL);
+        fwrite($file, INDENT . "const $constantName = $constantValue;");
     } else {
-        fwrite($file, INDENT . "const $constantName = '$constantValue';" . PHP_EOL);
+        fwrite($file, INDENT . "const $constantName = '$constantValue';");
     }
-    fwrite($file, PHP_EOL);
 }
 
 function writeMethodCommentDoc($file, $comment, &$throws, &$sees) {
@@ -298,10 +337,16 @@ function writeMethodDoc($doc, $file, $class, $method) {
     fwrite($file, INDENT . DOC_COMMENT_FOOTER);
 }
 
-function writeMethod($doc, $file, $class, $method) {
+function writeMethod($doc, $file, $class, $method, &$singleEOL) {
     if (doesParentHaveMethod($class, $method) &&
         ($method->isStatic() || $method->isFinal())) {
         return;
+    }
+    if ($singleEOL) {
+        fwrite($file, PHP_EOL);
+        $singleEOL = false;
+    } else {
+        fwrite($file, PHP_EOL . PHP_EOL);
     }
     writeMethodDoc($doc, $file, $class, $method);
 
@@ -325,6 +370,7 @@ function writeMethod($doc, $file, $class, $method) {
         fwrite($file, "abstract ");
     }
 
+    $className = $class->getName();
     $methodName = replaceKeyword($method->getShortName());
     fwrite($file, "function $methodName(");
 
@@ -336,18 +382,32 @@ function writeMethod($doc, $file, $class, $method) {
         if ($parameterName == "...") {
             fwrite($file, "...\$params");
         } else {
-            fwrite($file, "\$$parameterName");
+            $parameterType = parseDocMetadata($doc, $className, $methodName, $parameterName);
+            if ($parameter->isOptional()) {
+                $defaultValue = $parameter->isDefaultValueAvailable() ? $parameter->getDefaultValue() : null;
+                if (empty($defaultValue)) {
+                    if (is_null($defaultValue)) {
+                        $defaultValue = "null";
+                    } elseif (is_string($defaultValue)) {
+                        $defaultValue = "''";
+                    }
+                }
+                if (is_string($defaultValue) && empty($defaultValue)) {
+                    $defaultValue = "''";
+                }
+                $parameterName = "$parameterName = $defaultValue";
+            }
+            fwrite($file, "$parameterType\$$parameterName");
         }
         $first = false;
     }
 
+    $returnType = parseDocMetadata($doc, $className, $methodName);
     if ($class->isInterface() || $method->isAbstract()) {
-        fwrite($file, ");" . PHP_EOL);
+        fwrite($file, ")$returnType;");
     } else {
-        fwrite($file, ") { }" . PHP_EOL);
+        fwrite($file, ")$returnType" . PHP_EOL . INDENT . "{" . PHP_EOL . INDENT . "}");
     }
-
-    fwrite($file, PHP_EOL);
 }
 
 function writeClassDoc($doc, $file, $class) {
@@ -387,7 +447,7 @@ function writeClass($doc, $file, $class) {
     }
 
     $className = replaceKeyword($className);
-    fwrite($file, "$className ");
+    fwrite($file, "$className");
 
     $parentClass = $class->getParentClass();
     if ($parentClass) {
@@ -399,7 +459,7 @@ function writeClass($doc, $file, $class) {
             $parentClassName = "\\" . $parentClassName;
         }
         $parentClassName = replaceKeyword($parentClassName);
-        fwrite($file, "extends $parentClassName ");
+        fwrite($file, " extends $parentClassName");
     }
 
     $interfaces = $class->getInterfaces();
@@ -418,35 +478,34 @@ function writeClass($doc, $file, $class) {
             }
 
             if ($first) {
-                fwrite($file, "implements ");
+                fwrite($file, " implements");
             } else {
-                fwrite($file, ", ");
+                fwrite($file, ",");
             }
             $interfaceName = replaceKeyword($interfaceName);
-            fwrite($file, "$interfaceName");
+            fwrite($file, " $interfaceName");
             $first = false;
         }
-        fwrite($file, " ");
     }
 
-    fwrite($file, "{" . PHP_EOL);
-    fwrite($file, PHP_EOL);
+    fwrite($file, PHP_EOL . "{");
+    $singleEOL = true;
 
     $constants = $class->getConstants();
     if ($constants) {
         foreach($constants as $name => $value) {
-            writeConstant($doc, $file, $class, $name, $value);
+            writeConstant($doc, $file, $class, $name, $value, $singleEOL);
         }
     }
 
     $methods = $class->getMethods();
     if ($methods) {
         foreach($methods as $method) {
-            writeMethod($doc, $file, $class, $method);
+            writeMethod($doc, $file, $class, $method, $singleEOL);
         }
     }
 
-    fwrite($file, "}" . PHP_EOL);
+    fwrite($file, PHP_EOL . "}" . PHP_EOL);
 }
 
 function populateFromParent($classDoc, $doc) {

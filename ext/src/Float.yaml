@@ -6,18 +6,18 @@ Float:
       comment: Minimum possible Float value
       return:
         comment: minimum value
-        type: \Cassandra\Float
+        type: \Cassandra\Float_
     max:
       comment: Maximum possible Float value
       return:
         comment: maximum value
-        type: \Cassandra\Float
+        type: \Cassandra\Float_
     __construct:
       comment: Creates a new float.
       params:
         value:
           comment: A float value as a string, number or Float
-          type: double|int|string|\Cassandra\Float
+          type: float|int|string|\Cassandra\Float_
     type:
       comment: The type of this float.
       return:

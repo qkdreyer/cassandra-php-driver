@@ -54,7 +54,6 @@ Rows:
       comment: |-
         Returns existence of a given row.
 
-
         @see \ArrayAccess::offsetExists()
       params:
         offset:
@@ -67,7 +66,6 @@ Rows:
       comment: |-
         Returns a row at given index.
 
-
         @see \ArrayAccess::offsetGet()
       params:
         offset:
@@ -78,10 +76,9 @@ Rows:
         type: array|null
     offsetSet:
       comment: |-
-        Sets a row at given index.
+        Assigns a value to the specified offset.
 
         @throws Exception\DomainException
-
 
         @see \ArrayAccess::offsetSet()
       params:
@@ -99,7 +96,6 @@ Rows:
         Removes a row at given index.
 
         @throws Exception\DomainException
-
 
         @see \ArrayAccess::offsetUnset()
       params:

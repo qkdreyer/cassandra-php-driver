@@ -22,10 +22,10 @@ namespace Cassandra;
  * A future returned from `Session::prepareAsync()`
  * This future will resolve with a PreparedStatement or an exception.
  *
- * @see Session::prepareAsync()
+ * @see \Cassandra\Session::prepareAsync()
  */
-final class FuturePreparedStatement implements Future {
-
+final class FuturePreparedStatement implements Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -36,6 +36,7 @@ final class FuturePreparedStatement implements Future {
      *
      * @return \Cassandra\PreparedStatement A prepared statement
      */
-    public function get($timeout) { }
-
+    public function get($timeout = null): \Cassandra\PreparedStatement
+    {
+    }
 }

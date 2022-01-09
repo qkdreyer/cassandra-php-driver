@@ -21,12 +21,12 @@ DefaultAggregate:
       comment: ""
       return:
         comment: Final public function of the aggregate
-        type: \Cassandra\Function
+        type: \Cassandra\Function_
     stateFunction:
       comment: ""
       return:
         comment: State public function of the aggregate
-        type: \Cassandra\Function
+        type: \Cassandra\Function_
     initialCondition:
       comment: ""
       return:

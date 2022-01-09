@@ -21,28 +21,28 @@ namespace Cassandra;
 /**
  * A PHP representation of an index
  */
-interface Index {
-
+interface Index
+{
     /**
      * Returns the name of the index
      *
      * @return string Name of the index
      */
-    public function name();
+    public function name(): string;
 
     /**
      * Returns the kind of index
      *
      * @return string Kind of the index
      */
-    public function kind();
+    public function kind(): string;
 
     /**
      * Returns the target column of the index
      *
      * @return string Target column name of the index
      */
-    public function target();
+    public function target(): string;
 
     /**
      * Return a column's option by name
@@ -51,27 +51,26 @@ interface Index {
      *
      * @return \Cassandra\Value Value of an option by name
      */
-    public function option($name);
+    public function option(string $name): \Cassandra\Value;
 
     /**
      * Returns all the index's options
      *
      * @return array A dictionary of `string` and `Value` pairs of the index's options.
      */
-    public function options();
+    public function options(): array;
 
     /**
      * Returns the class name of the index
      *
      * @return string Class name of a custom index
      */
-    public function className();
+    public function className(): string;
 
     /**
      * Determines if the index is a custom index.
      *
      * @return bool true if a custom index
      */
-    public function isCustom();
-
+    public function isCustom(): bool;
 }

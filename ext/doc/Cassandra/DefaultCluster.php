@@ -21,10 +21,10 @@ namespace Cassandra;
 /**
  * Default cluster implementation.
  *
- * @see Cluster
+ * @see \Cassandra\Cluster
  */
-final class DefaultCluster implements Cluster {
-
+final class DefaultCluster implements Cluster
+{
     /**
      * Creates a new Session instance.
      *
@@ -33,7 +33,9 @@ final class DefaultCluster implements Cluster {
      *
      * @return \Cassandra\Session Session instance
      */
-    public function connect($keyspace, $timeout) { }
+    public function connect(string $keyspace = null, int $timeout = null): \Cassandra\Session
+    {
+    }
 
     /**
      * Creates a new Session instance.
@@ -42,6 +44,7 @@ final class DefaultCluster implements Cluster {
      *
      * @return \Cassandra\Future A Future Session instance
      */
-    public function connectAsync($keyspace) { }
-
+    public function connectAsync(string $keyspace = null): \Cassandra\Future
+    {
+    }
 }

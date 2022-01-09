@@ -21,8 +21,8 @@ namespace Cassandra;
 /**
  * A PHP representation of a schema
  */
-interface Schema {
-
+interface Schema
+{
     /**
      * Returns a Keyspace instance by name.
      *
@@ -30,13 +30,12 @@ interface Schema {
      *
      * @return \Cassandra\Keyspace Keyspace instance or null
      */
-    public function keyspace($name);
+    public function keyspace(string $name): \Cassandra\Keyspace;
 
     /**
      * Returns all keyspaces defined in the schema.
      *
      * @return array An array of Keyspace instances.
      */
-    public function keyspaces();
-
+    public function keyspaces(): array;
 }

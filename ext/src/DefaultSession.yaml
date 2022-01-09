@@ -60,10 +60,10 @@ DefaultSession:
       params:
         timeout:
           comment: ""
-          type: double
+          type: float
       return:
         comment: ""
-        type: "null"
+        type: void
     closeAsync:
       comment: ""
       return:

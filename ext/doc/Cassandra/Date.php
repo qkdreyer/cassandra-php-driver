@@ -21,26 +21,32 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `date` type.
  */
-final class Date implements Value {
-
+final class Date implements \Stringable, Value
+{
     /**
      * Creates a new Date object
      *
      * @param int $seconds Absolute seconds from epoch (1970, 1, 1), can be negative, defaults to current time.
      */
-    public function __construct($seconds) { }
+    public function __construct(int $seconds = null)
+    {
+    }
 
     /**
      * The type of this date.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * @return int Absolute seconds from epoch (1970, 1, 1), can be negative
      */
-    public function seconds() { }
+    public function seconds(): int
+    {
+    }
 
     /**
      * Converts current date to PHP DateTime.
@@ -49,7 +55,9 @@ final class Date implements Value {
      *
      * @return \DateTime PHP representation
      */
-    public function toDateTime($time) { }
+    public function toDateTime(\Cassandra\Time $time = null): \DateTime
+    {
+    }
 
     /**
      * Creates a new Date object from a \DateTime object.
@@ -58,11 +66,14 @@ final class Date implements Value {
      *
      * @return \DateTime PHP representation
      */
-    public static function fromDateTime($datetime) { }
+    public static function fromDateTime(\DateTime $datetime): \DateTime
+    {
+    }
 
     /**
      * @return string this date in string format: Date(seconds=$seconds)
      */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

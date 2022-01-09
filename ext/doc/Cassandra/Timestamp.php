@@ -21,8 +21,8 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `timestamp` datatype
  */
-final class Timestamp implements Value {
-
+final class Timestamp implements \Stringable, Value
+{
     /**
      * Creates a new timestamp from either unix timestamp and microseconds or
      * from the current time by default.
@@ -30,14 +30,18 @@ final class Timestamp implements Value {
      * @param int $seconds The number of seconds
      * @param int $microseconds The number of microseconds
      */
-    public function __construct($seconds, $microseconds) { }
+    public function __construct(int $seconds = null, int $microseconds = null)
+    {
+    }
 
     /**
      * The type of this timestamp.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Unix timestamp.
@@ -46,7 +50,9 @@ final class Timestamp implements Value {
      *
      * @see time
      */
-    public function time() { }
+    public function time(): int
+    {
+    }
 
     /**
      * Microtime from this timestamp
@@ -57,20 +63,25 @@ final class Timestamp implements Value {
      *
      * @see microtime
      */
-    public function microtime($get_as_float) { }
+    public function microtime(bool $get_as_float = null)
+    {
+    }
 
     /**
      * Converts current timestamp to PHP DateTime.
      *
      * @return \DateTime PHP representation
      */
-    public function toDateTime() { }
+    public function toDateTime(): \DateTime
+    {
+    }
 
     /**
      * Returns a string representation of this timestamp.
      *
      * @return string timestamp
      */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

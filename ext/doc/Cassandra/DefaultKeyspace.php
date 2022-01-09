@@ -21,35 +21,43 @@ namespace Cassandra;
 /**
  * A PHP representation of a keyspace
  */
-final class DefaultKeyspace implements Keyspace {
-
+final class DefaultKeyspace implements Keyspace
+{
     /**
      * Returns keyspace name
      *
      * @return string Name
      */
-    public function name() { }
+    public function name(): string
+    {
+    }
 
     /**
      * Returns replication class name
      *
      * @return string Replication class
      */
-    public function replicationClassName() { }
+    public function replicationClassName(): string
+    {
+    }
 
     /**
      * Returns replication options
      *
      * @return \Cassandra\Map Replication options
      */
-    public function replicationOptions() { }
+    public function replicationOptions(): \Cassandra\Map
+    {
+    }
 
     /**
      * Returns whether the keyspace has durable writes enabled
      *
      * @return string Whether durable writes are enabled
      */
-    public function hasDurableWrites() { }
+    public function hasDurableWrites(): string
+    {
+    }
 
     /**
      * Returns a table by name
@@ -58,14 +66,18 @@ final class DefaultKeyspace implements Keyspace {
      *
      * @return \Cassandra\Table
      */
-    public function table($name) { }
+    public function table(string $name): \Cassandra\Table
+    {
+    }
 
     /**
      * Returns all tables defined in this keyspace
      *
      * @return array An array of `Table` instances
      */
-    public function tables() { }
+    public function tables(): array
+    {
+    }
 
     /**
      * Get user type by name
@@ -74,14 +86,18 @@ final class DefaultKeyspace implements Keyspace {
      *
      * @return \Cassandra\Type\UserType|null A user type or null
      */
-    public function userType($name) { }
+    public function userType(string $name)
+    {
+    }
 
     /**
      * Get all user types
      *
      * @return array An array of user types
      */
-    public function userTypes() { }
+    public function userTypes(): array
+    {
+    }
 
     /**
      * Get materialized view by name
@@ -90,14 +106,18 @@ final class DefaultKeyspace implements Keyspace {
      *
      * @return \Cassandra\MaterizedView|null A materialized view or null
      */
-    public function materializedView($name) { }
+    public function materializedView(string $name)
+    {
+    }
 
     /**
      * Gets all materialized views
      *
      * @return array An array of materialized views
      */
-    public function materializedViews() { }
+    public function materializedViews(): array
+    {
+    }
 
     /**
      * Get a function by name and signature
@@ -105,16 +125,20 @@ final class DefaultKeyspace implements Keyspace {
      * @param string $name Function name
      * @param string|\Cassandra\Type $params Function arguments
      *
-     * @return \Cassandra\Function|null A function or null
+     * @return \Cassandra\Function_|null A function or null
      */
-    public function function_($name, ...$params) { }
+    public function function_(string $name, ...$params)
+    {
+    }
 
     /**
      * Get all functions
      *
      * @return array An array of functions
      */
-    public function functions() { }
+    public function functions(): array
+    {
+    }
 
     /**
      * Get an aggregate by name and signature
@@ -124,13 +148,16 @@ final class DefaultKeyspace implements Keyspace {
      *
      * @return \Cassandra\Aggregate|null An aggregate or null
      */
-    public function aggregate($name, ...$params) { }
+    public function aggregate(string $name, ...$params)
+    {
+    }
 
     /**
      * Get all aggregates
      *
      * @return array An array of aggregates
      */
-    public function aggregates() { }
-
+    public function aggregates(): array
+    {
+    }
 }

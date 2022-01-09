@@ -20,28 +20,33 @@ namespace Cassandra\Exception;
 
 /**
  * ExecutionException is raised when something went wrong during request execution.
- * @see TruncateException
- * @see UnavailableException
- * @see ReadTimeoutException
- * @see WriteTimeoutException
+ * @see \Cassandra\Exception\TruncateException
+ * @see \Cassandra\Exception\UnavailableException
+ * @see \Cassandra\Exception\ReadTimeoutException
+ * @see \Cassandra\Exception\WriteTimeoutException
  */
-class ExecutionException extends RuntimeException  {
+class ExecutionException extends RuntimeException
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @param \Exception $previous
+     */
+    public function __construct(string $message = '', int $code = 0, \Exception $previous = null)
+    {
+    }
 
     /**
-     * @param mixed $message
-     * @param mixed $code
-     * @param mixed $previous
+     * @return void
      */
-    public function __construct($message, $code, $previous) { }
+    public function __wakeup(): void
+    {
+    }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function __wakeup() { }
-
-    /**
-     * @return mixed
-     */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

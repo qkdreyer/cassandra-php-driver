@@ -21,62 +21,61 @@ namespace Cassandra;
 /**
  * A PHP representation of a function
  */
-interface Function_ {
-
+interface Function_
+{
     /**
      * Returns the full name of the function
      *
      * @return string Full name of the function including name and types
      */
-    public function name();
+    public function name(): string;
 
     /**
      * Returns the simple name of the function
      *
      * @return string Simple name of the function
      */
-    public function simpleName();
+    public function simpleName(): string;
 
     /**
      * Returns the arguments of the function
      *
      * @return array Arguments of the function
      */
-    public function arguments();
+    public function arguments(): array;
 
     /**
      * Returns the return type of the function
      *
      * @return \Cassandra\Type Return type of the function
      */
-    public function returnType();
+    public function returnType(): \Cassandra\Type;
 
     /**
      * Returns the signature of the function
      *
      * @return string Signature of the function (same as name())
      */
-    public function signature();
+    public function signature(): string;
 
     /**
      * Returns the lanuage of the function
      *
      * @return string Language used by the function
      */
-    public function language();
+    public function language(): string;
 
     /**
      * Returns the body of the function
      *
      * @return string Body of the function
      */
-    public function body();
+    public function body(): string;
 
     /**
      * Determines if a function is called when the value is null.
      *
      * @return bool Returns whether the function is called when the input columns are null
      */
-    public function isCalledOnNullInput();
-
+    public function isCalledOnNullInput(): bool;
 }

@@ -9,6 +9,9 @@ Cluster:
         keyspace:
           comment: Optional keyspace name
           type: string
+        timeout:
+          comment: Optional timeout
+          type: int
       return:
         comment: Session instance
         type: \Cassandra\Session

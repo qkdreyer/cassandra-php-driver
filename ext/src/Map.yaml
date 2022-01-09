@@ -100,51 +100,59 @@ Map:
         type: void
     offsetSet:
       comment: |
-        Sets the value at a given key
+        Assigns a value to the specified offset.
 
         @throws Exception\InvalidArgumentException when the type of key or value is wrong
+
+        @see \ArrayAccess::offsetSet()
       params:
-        key:
-          comment: Key to use.
+        offset:
+          comment: The offset to assign the value to.
           type: mixed
         value:
-          comment: Value to set.
+          comment: The value to set.
           type: mixed
       return:
         comment: ""
         type: void
     offsetGet:
       comment: |-
-        Retrieves the value at a given key
+        Returns the value at specified offset.
 
         @throws Exception\InvalidArgumentException when the type of key is wrong
+
+        @see \ArrayAccess::offsetGet()
       params:
-        key:
-          comment: Key to use.
+        offset:
+          comment: The offset to retrieve.
           type: mixed
       return:
         comment: '     Value or `null`'
         type: mixed
     offsetUnset:
       comment: |
-        Deletes the value at a given key
+        Unsets an offset.
 
         @throws Exception\InvalidArgumentException when the type of key is wrong
+
+        @see \ArrayAccess::offsetUnset()
       params:
-        key:
-          comment: Key to use.
+        offset:
+          comment: The offset to unset.
           type: mixed
       return:
         comment: ""
         type: void
     offsetExists:
       comment: |
-        Returns whether the value a given key is present
+        Whether or not an offset exists.
 
         @throws Exception\InvalidArgumentException when the type of key is wrong
+
+        @see \ArrayAccess::offsetExists()
       params:
-        key:
-          comment: Key to use.
+        offset:
+          comment: An offset to check for.
           type: mixed
       return:
         comment: '       Whether the value at a given key is present'

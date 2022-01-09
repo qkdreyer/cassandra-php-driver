@@ -8,5 +8,5 @@ PreparedStatement:
     faster, because they are sent directly to replica nodes and avoid the extra
     network hop.
 
-    @see Session::prepare()
+    @see \Cassandra\Session::prepare()
 ...

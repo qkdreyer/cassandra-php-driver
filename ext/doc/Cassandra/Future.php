@@ -21,13 +21,13 @@ namespace Cassandra;
 /**
  * Futures are returns from asynchronous methods.
  *
- * @see Cluster::connectAsync()
- * @see Session::executeAsync()
- * @see Session::prepareAsync()
- * @see Session::closeAsync()
+ * @see \Cassandra\Cluster::connectAsync()
+ * @see \Cassandra\Session::executeAsync()
+ * @see \Cassandra\Session::prepareAsync()
+ * @see \Cassandra\Session::closeAsync()
  */
-interface Future {
-
+interface Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -38,6 +38,5 @@ interface Future {
      *
      * @return mixed a value that the future has been resolved with
      */
-    public function get($timeout);
-
+    public function get($timeout = null): mixed;
 }

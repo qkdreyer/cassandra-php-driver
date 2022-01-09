@@ -21,32 +21,31 @@ namespace Cassandra;
 /**
  * Common interface implemented by all Cassandra value types.
  *
- * @see Bigint
- * @see Smallint
- * @see Tinyint
- * @see Blob
- * @see Collection
- * @see Float
- * @see Inet
- * @see Map
- * @see Set
- * @see Timestamp
- * @see Timeuuid
- * @see Uuid
- * @see Varint
- * @see Date
- * @see Time
+ * @see \Cassandra\Bigint
+ * @see \Cassandra\Smallint
+ * @see \Cassandra\Tinyint
+ * @see \Cassandra\Blob
+ * @see \Cassandra\Collection
+ * @see \Cassandra\Float
+ * @see \Cassandra\Inet
+ * @see \Cassandra\Map
+ * @see \Cassandra\Set
+ * @see \Cassandra\Timestamp
+ * @see \Cassandra\Timeuuid
+ * @see \Cassandra\Uuid
+ * @see \Cassandra\Varint
+ * @see \Cassandra\Date
+ * @see \Cassandra\Time
  *
- * @see Numeric
- * @see UuidInterface
+ * @see \Cassandra\Numeric
+ * @see \Cassandra\UuidInterface
  */
-interface Value {
-
+interface Value
+{
     /**
      * The type of represented by the value.
      *
      * @return \Cassandra\Type
      */
-    public function type();
-
+    public function type(): \Cassandra\Type;
 }

@@ -5,16 +5,16 @@ ExecutionOptions:
 
     @deprecated Use an array of options instead of creating an instance of this class.
 
-    @see Session::execute()
-    @see Session::executeAsync()
-    @see Session::prepare()
-    @see Session::prepareAsync()
+    @see \Cassandra\Session::execute()
+    @see \Cassandra\Session::executeAsync()
+    @see \Cassandra\Session::prepare()
+    @see \Cassandra\Session::prepareAsync()
   methods:
     __construct:
       comment: |-
         Creates a new options object for execution.
 
-        @see Session::execute() for valid execution options
+        @see \Cassandra\Session::execute() for valid execution options
 
         @throws Exception\InvalidArgumentException
       params:

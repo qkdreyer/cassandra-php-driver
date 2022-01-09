@@ -15,7 +15,7 @@ Cluster\Builder:
         Configures default consistency for all requests.
       params:
         consistency:
-          comment: A consistency level, must be one of Cassandra::CONSISTENCY_* values
+          comment: A consistency level, must be one of \Cassandra::CONSISTENCY_* values
           type: int
       return:
         comment: self

@@ -3,8 +3,8 @@ Session:
   comment: |-
     A session is used to prepare and execute statements.
 
-    @see Cluster::connect()
-    @see Cluster::connectAsync()
+    @see \Cassandra\Cluster::connect()
+    @see \Cassandra\Cluster::connectAsync()
   methods:
     execute:
       comment: |-
@@ -38,7 +38,7 @@ Session:
         Execute a query asynchronously. This method returns immediately, but
         the query continues execution in the background.
 
-        @see Session::execute() for valid execution options
+        @see \Cassandra\Session::execute() for valid execution options
       params:
         statement:
           comment: string or statement to be executed.
@@ -55,7 +55,7 @@ Session:
 
         @throws Exception
 
-        @see Session::execute() for valid execution options
+        @see \Cassandra\Session::execute() for valid execution options
       params:
         cql:
           comment: The query to be prepared.
@@ -71,7 +71,7 @@ Session:
       comment: |
         Asynchronously prepare a query for execution.
 
-        @see Session::execute() for valid execution options
+        @see \Cassandra\Session::execute() for valid execution options
       params:
         cql:
           comment: The query to be prepared.
@@ -91,10 +91,10 @@ Session:
         timeout:
           comment: |
             The amount of time in seconds to wait for the session to close.
-          type: double
+          type: float
       return:
         comment: Nothing.
-        type: "null"
+        type: void
     closeAsync:
       comment: Asynchronously close the session and all its connections.
       return:

@@ -21,16 +21,17 @@ namespace Cassandra;
 /**
  * Cluster object is used to create Sessions.
  */
-interface Cluster {
-
+interface Cluster
+{
     /**
      * Creates a new Session instance.
      *
      * @param string $keyspace Optional keyspace name
+     * @param int $timeout Optional timeout
      *
      * @return \Cassandra\Session Session instance
      */
-    public function connect($keyspace);
+    public function connect(string $keyspace = null, int $timeout = null): \Cassandra\Session;
 
     /**
      * Creates a new Session instance.
@@ -39,6 +40,5 @@ interface Cluster {
      *
      * @return \Cassandra\Future A Future Session instance
      */
-    public function connectAsync($keyspace);
-
+    public function connectAsync(string $keyspace = null): \Cassandra\Future;
 }

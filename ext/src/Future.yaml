@@ -3,10 +3,10 @@ Future:
   comment: |-
     Futures are returns from asynchronous methods.
 
-    @see Cluster::connectAsync()
-    @see Session::executeAsync()
-    @see Session::prepareAsync()
-    @see Session::closeAsync()
+    @see \Cassandra\Cluster::connectAsync()
+    @see \Cassandra\Session::executeAsync()
+    @see \Cassandra\Session::prepareAsync()
+    @see \Cassandra\Session::closeAsync()
   methods:
     get:
       comment: |

@@ -21,69 +21,86 @@ namespace Cassandra;
 /**
  * A PHP representation of an aggregate
  */
-final class DefaultAggregate implements Aggregate {
-
+final class DefaultAggregate implements Aggregate
+{
     /**
      * Returns the full name of the aggregate
      *
      * @return string Full name of the aggregate including name and types
      */
-    public function name() { }
+    public function name(): string
+    {
+    }
 
     /**
      * Returns the simple name of the aggregate
      *
      * @return string Simple name of the aggregate
      */
-    public function simpleName() { }
+    public function simpleName(): string
+    {
+    }
 
     /**
      * Returns the argument types of the aggregate
      *
      * @return array Argument types of the aggregate
      */
-    public function argumentTypes() { }
+    public function argumentTypes(): array
+    {
+    }
 
     /**
      * Returns the state function of the aggregate
      *
-     * @return \Cassandra\Function State public function of the aggregate
+     * @return \Cassandra\Function_ State public function of the aggregate
      */
-    public function stateFunction() { }
+    public function stateFunction(): \Cassandra\Function_
+    {
+    }
 
     /**
      * Returns the final function of the aggregate
      *
-     * @return \Cassandra\Function Final public function of the aggregate
+     * @return \Cassandra\Function_ Final public function of the aggregate
      */
-    public function finalFunction() { }
+    public function finalFunction(): \Cassandra\Function_
+    {
+    }
 
     /**
      * Returns the initial condition of the aggregate
      *
-     * @return \Cassandra\Value
+     * @return \Cassandra\Value Initial condition of the aggregate
      */
-    public function initialCondition() { }
+    public function initialCondition(): \Cassandra\Value
+    {
+    }
 
     /**
      * Returns the state type of the aggregate
      *
      * @return \Cassandra\Type State type of the aggregate
      */
-    public function stateType() { }
+    public function stateType(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns the return type of the aggregate
      *
      * @return \Cassandra\Type Return type of the aggregate
      */
-    public function returnType() { }
+    public function returnType(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns the signature of the aggregate
      *
      * @return string Signature of the aggregate (same as name())
      */
-    public function signature() { }
-
+    public function signature(): string
+    {
+    }
 }

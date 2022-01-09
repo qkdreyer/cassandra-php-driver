@@ -23,23 +23,28 @@ namespace Cassandra\Exception;
  * e.g. sending a QUERY message before STARTUP. Seeing this error can be
  * considered a bug.
  */
-class ProtocolException extends RuntimeException  {
+class ProtocolException extends RuntimeException
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @param \Exception $previous
+     */
+    public function __construct(string $message = '', int $code = 0, \Exception $previous = null)
+    {
+    }
 
     /**
-     * @param mixed $message
-     * @param mixed $code
-     * @param mixed $previous
+     * @return void
      */
-    public function __construct($message, $code, $previous) { }
+    public function __wakeup(): void
+    {
+    }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function __wakeup() { }
-
-    /**
-     * @return mixed
-     */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

@@ -21,36 +21,44 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `map` datatype
  */
-final class Map implements Value, \Countable, \Iterator, \ArrayAccess {
-
+final class Map implements Value, \Countable, \Iterator, \ArrayAccess
+{
     /**
      * Creates a new map of a given key and value type.
      *
      * @param \Cassandra\Type $keyType
      * @param \Cassandra\Type $valueType
      */
-    public function __construct($keyType, $valueType) { }
+    public function __construct(\Cassandra\Type $keyType, \Cassandra\Type $valueType)
+    {
+    }
 
     /**
      * The type of this map.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns all keys in the map as an array.
      *
      * @return array keys
      */
-    public function keys() { }
+    public function keys(): array
+    {
+    }
 
     /**
      * Returns all values in the map as an array.
      *
      * @return array values
      */
-    public function values() { }
+    public function values(): array
+    {
+    }
 
     /**
      * Sets key/value in the map.
@@ -60,7 +68,9 @@ final class Map implements Value, \Countable, \Iterator, \ArrayAccess {
      *
      * @return mixed
      */
-    public function set($key, $value) { }
+    public function set(mixed $key, mixed $value): mixed
+    {
+    }
 
     /**
      * Gets the value of the key in the map.
@@ -69,7 +79,9 @@ final class Map implements Value, \Countable, \Iterator, \ArrayAccess {
      *
      * @return mixed Value or null
      */
-    public function get($key) { }
+    public function get(mixed $key): mixed
+    {
+    }
 
     /**
      * Removes the key from the map.
@@ -78,7 +90,9 @@ final class Map implements Value, \Countable, \Iterator, \ArrayAccess {
      *
      * @return bool Whether the key was removed or not, e.g. didn't exist
      */
-    public function remove($key) { }
+    public function remove(mixed $key): bool
+    {
+    }
 
     /**
      * Returns whether the key is in the map.
@@ -87,93 +101,122 @@ final class Map implements Value, \Countable, \Iterator, \ArrayAccess {
      *
      * @return bool Whether the key is in the map or not
      */
-    public function has($key) { }
+    public function has(mixed $key): bool
+    {
+    }
 
     /**
      * Total number of elements in this map
      *
      * @return int count
      */
-    public function count() { }
+    public function count(): int
+    {
+    }
 
     /**
      * Current value for iteration
      *
      * @return mixed current value
      */
-    public function current() { }
+    public function current(): mixed
+    {
+    }
 
     /**
      * Current key for iteration
      *
      * @return int current key
      */
-    public function key() { }
+    public function key(): int
+    {
+    }
 
     /**
      * Move internal iterator forward
      *
      * @return void
      */
-    public function next() { }
-
-    /**
-     * Check whether a current value exists
-     *
-     * @return bool
-     */
-    public function valid() { }
+    public function next(): void
+    {
+    }
 
     /**
      * Rewind internal iterator
      *
      * @return void
      */
-    public function rewind() { }
+    public function rewind(): void
+    {
+    }
 
     /**
-     * Sets the value at a given key
+     * Check whether a current value exists
      *
-     * @param mixed $key Key to use.
-     * @param mixed $value Value to set.
-     *
-     * @throws Exception\InvalidArgumentException when the type of key or value is wrong
-     *
-     * @return void
+     * @return bool
      */
-    public function offsetSet($key, $value) { }
+    public function valid(): bool
+    {
+    }
 
     /**
-     * Retrieves the value at a given key
+     * Whether or not an offset exists.
      *
-     * @param mixed $key Key to use.
-     *
-     * @throws Exception\InvalidArgumentException when the type of key is wrong
-     *
-     * @return mixed Value or `null`
-     */
-    public function offsetGet($key) { }
-
-    /**
-     * Deletes the value at a given key
-     *
-     * @param mixed $key Key to use.
-     *
-     * @throws Exception\InvalidArgumentException when the type of key is wrong
-     *
-     * @return void
-     */
-    public function offsetUnset($key) { }
-
-    /**
-     * Returns whether the value a given key is present
-     *
-     * @param mixed $key Key to use.
+     * @param mixed $offset An offset to check for.
      *
      * @throws Exception\InvalidArgumentException when the type of key is wrong
      *
      * @return bool Whether the value at a given key is present
+     *
+     * @see \ArrayAccess::offsetExists()
      */
-    public function offsetExists($key) { }
+    public function offsetExists(mixed $offset): bool
+    {
+    }
 
+    /**
+     * Returns the value at specified offset.
+     *
+     * @param mixed $offset The offset to retrieve.
+     *
+     * @throws Exception\InvalidArgumentException when the type of key is wrong
+     *
+     * @return mixed Value or `null`
+     *
+     * @see \ArrayAccess::offsetGet()
+     */
+    public function offsetGet(mixed $offset): mixed
+    {
+    }
+
+    /**
+     * Assigns a value to the specified offset.
+     *
+     * @param mixed $offset The offset to assign the value to.
+     * @param mixed $value The value to set.
+     *
+     * @throws Exception\InvalidArgumentException when the type of key or value is wrong
+     *
+     * @return void
+     *
+     * @see \ArrayAccess::offsetSet()
+     */
+    public function offsetSet(mixed $offset, mixed $value): void
+    {
+    }
+
+    /**
+     * Unsets an offset.
+     *
+     * @param mixed $offset The offset to unset.
+     *
+     * @throws Exception\InvalidArgumentException when the type of key is wrong
+     *
+     * @return void
+     *
+     * @see \ArrayAccess::offsetUnset()
+     */
+    public function offsetUnset(mixed $offset): void
+    {
+    }
 }

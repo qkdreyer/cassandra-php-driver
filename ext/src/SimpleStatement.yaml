@@ -7,7 +7,7 @@ SimpleStatement:
 
     NOTE: Positional argument are only valid for native protocol v2+.
 
-    @see Session::execute()
+    @see \Cassandra\Session::execute()
   methods:
     __construct:
       comment: Creates a new simple statement with the provided CQL.

@@ -22,23 +22,28 @@ namespace Cassandra\Exception;
  * TimeoutException is generally raised when a future did not resolve
  * within a given time interval.
  */
-class TimeoutException extends RuntimeException  {
+class TimeoutException extends RuntimeException
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @param \Exception $previous
+     */
+    public function __construct(string $message = '', int $code = 0, \Exception $previous = null)
+    {
+    }
 
     /**
-     * @param mixed $message
-     * @param mixed $code
-     * @param mixed $previous
+     * @return void
      */
-    public function __construct($message, $code, $previous) { }
+    public function __wakeup(): void
+    {
+    }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function __wakeup() { }
-
-    /**
-     * @return mixed
-     */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

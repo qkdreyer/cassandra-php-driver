@@ -10,21 +10,21 @@ Exception\ConfigurationException:
       params:
         message:
           comment: ""
-          type: mixed
+          type: string
         code:
           comment: ""
-          type: mixed
+          type: int
         previous:
           comment: ""
-          type: mixed
+          type: \Exception
     __wakeup:
       comment: ""
       return:
         comment: ""
-        type: mixed
+        type: void
     __toString:
       comment: ""
       return:
         comment: ""
-        type: mixed
+        type: string
 ...

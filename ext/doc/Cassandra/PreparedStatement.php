@@ -26,10 +26,11 @@ namespace Cassandra;
  * faster, because they are sent directly to replica nodes and avoid the extra
  * network hop.
  *
- * @see Session::prepare()
+ * @see \Cassandra\Session::prepare()
  */
-final class PreparedStatement implements Statement {
-
-    private function __construct() { }
-
+final class PreparedStatement implements Statement
+{
+    private function __construct()
+    {
+    }
 }

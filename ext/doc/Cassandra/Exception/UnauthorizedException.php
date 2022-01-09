@@ -22,23 +22,28 @@ namespace Cassandra\Exception;
  * UnauthorizedException is raised when the current user doesn't have
  * sufficient permissions to access data.
  */
-class UnauthorizedException extends ValidationException  {
+class UnauthorizedException extends ValidationException
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @param \Exception $previous
+     */
+    public function __construct(string $message = '', int $code = 0, \Exception $previous = null)
+    {
+    }
 
     /**
-     * @param mixed $message
-     * @param mixed $code
-     * @param mixed $previous
+     * @return void
      */
-    public function __construct($message, $code, $previous) { }
+    public function __wakeup(): void
+    {
+    }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function __wakeup() { }
-
-    /**
-     * @return mixed
-     */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

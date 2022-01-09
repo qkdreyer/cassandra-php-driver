@@ -21,8 +21,8 @@ namespace Cassandra;
 /**
  * A PHP representation of a schema
  */
-final class DefaultSchema implements Schema {
-
+final class DefaultSchema implements Schema
+{
     /**
      * Returns a Keyspace instance by name.
      *
@@ -30,20 +30,25 @@ final class DefaultSchema implements Schema {
      *
      * @return \Cassandra\Keyspace Keyspace instance or null
      */
-    public function keyspace($name) { }
+    public function keyspace(string $name): \Cassandra\Keyspace
+    {
+    }
 
     /**
      * Returns all keyspaces defined in the schema.
      *
      * @return array An array of `Keyspace` instances.
      */
-    public function keyspaces() { }
+    public function keyspaces(): array
+    {
+    }
 
     /**
      * Get the version of the schema snapshot
      *
      * @return int Version of the schema.
      */
-    public function version() { }
-
+    public function version(): int
+    {
+    }
 }

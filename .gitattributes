@@ -1,0 +1,11 @@
+/ext/include export-ignore
+/ext/packaging export-ignore
+/ext/src export-ignore
+/ext/tests export-ignore
+/ext/util export-ignore
+/features export-ignore
+/lib export-ignore
+/support export-ignore
+/tests export-ignore
+
+*.php diff=php

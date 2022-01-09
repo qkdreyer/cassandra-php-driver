@@ -23,13 +23,13 @@ namespace Cassandra;
  *
  * @deprecated Use an array of options instead of creating an instance of this class.
  *
- * @see Session::execute()
- * @see Session::executeAsync()
- * @see Session::prepare()
- * @see Session::prepareAsync()
+ * @see \Cassandra\Session::execute()
+ * @see \Cassandra\Session::executeAsync()
+ * @see \Cassandra\Session::prepare()
+ * @see \Cassandra\Session::prepareAsync()
  */
-final class ExecutionOptions {
-
+final class ExecutionOptions
+{
     /**
      * Creates a new options object for execution.
      *
@@ -37,14 +37,17 @@ final class ExecutionOptions {
      *
      * @throws Exception\InvalidArgumentException
      *
-     * @see Session::execute() for valid execution options
+     * @see \Cassandra\Session::execute() for valid execution options
      */
-    public function __construct($options) { }
+    public function __construct(array $options = null)
+    {
+    }
 
     /**
      * @param mixed $name
      * @return mixed
      */
-    public function __get($name) { }
-
+    public function __get(mixed $name): mixed
+    {
+    }
 }

@@ -21,10 +21,10 @@ namespace Cassandra;
 /**
  * A future that resolves with Session.
  *
- * @see Cluster::connectAsync()
+ * @see \Cassandra\Cluster::connectAsync()
  */
-final class FutureSession implements Future {
-
+final class FutureSession implements Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -35,6 +35,7 @@ final class FutureSession implements Future {
      *
      * @return \Cassandra\Session A connected session
      */
-    public function get($timeout) { }
-
+    public function get($timeout = null): \Cassandra\Session
+    {
+    }
 }

@@ -21,42 +21,52 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `timeuuid` datatype
  */
-final class Timeuuid implements Value, UuidInterface {
-
+final class Timeuuid implements \Stringable, Value, UuidInterface
+{
     /**
      * Creates a timeuuid from a given timestamp or current time.
      *
      * @param int $timestamp Unix timestamp
      */
-    public function __construct($timestamp) { }
+    public function __construct(int $timestamp = null)
+    {
+    }
 
     /**
      * Returns this timeuuid as string.
      *
      * @return string timeuuid
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this timeuuid.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns this timeuuid as string.
      *
      * @return string timeuuid
      */
-    public function uuid() { }
+    public function uuid(): string
+    {
+    }
 
     /**
      * Returns the version of this timeuuid.
      *
      * @return int version of this timeuuid
      */
-    public function version() { }
+    public function version(): int
+    {
+    }
 
     /**
      * Unix timestamp.
@@ -65,13 +75,16 @@ final class Timeuuid implements Value, UuidInterface {
      *
      * @see time
      */
-    public function time() { }
+    public function time(): int
+    {
+    }
 
     /**
      * Converts current timeuuid to PHP DateTime.
      *
      * @return \DateTime PHP representation
      */
-    public function toDateTime() { }
-
+    public function toDateTime(): \DateTime
+    {
+    }
 }

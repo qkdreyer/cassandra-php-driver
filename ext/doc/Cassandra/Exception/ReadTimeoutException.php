@@ -23,23 +23,28 @@ namespace Cassandra\Exception;
  * from the required number of replica nodes in time during a read.
  * @see https://github.com/apache/cassandra/blob/cassandra-2.1/doc/native_protocol_v1.spec#L709-L726 Description of ReadTimeout error in the native protocol spec
  */
-class ReadTimeoutException extends ExecutionException  {
+class ReadTimeoutException extends ExecutionException
+{
+    /**
+     * @param string $message
+     * @param int $code
+     * @param \Exception $previous
+     */
+    public function __construct(string $message = '', int $code = 0, \Exception $previous = null)
+    {
+    }
 
     /**
-     * @param mixed $message
-     * @param mixed $code
-     * @param mixed $previous
+     * @return void
      */
-    public function __construct($message, $code, $previous) { }
+    public function __wakeup(): void
+    {
+    }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function __wakeup() { }
-
-    /**
-     * @return mixed
-     */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

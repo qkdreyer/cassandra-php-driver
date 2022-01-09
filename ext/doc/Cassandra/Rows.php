@@ -21,11 +21,60 @@ namespace Cassandra;
 /**
  * Rows represent a result of statement execution.
  */
-final class Rows implements \Iterator, \ArrayAccess {
-
+final class Rows implements \Countable, \Iterator
+{
     /**
      */
-    public function __construct() { }
+    public function __construct()
+    {
+    }
+
+    /**
+     * Check for the last page when paging.
+     *
+     * @return bool whether this is the last page or not
+     */
+    public function isLastPage(): bool
+    {
+    }
+
+    /**
+     * Get the next page of results.
+     *
+     * @param float|null $timeout
+     *
+     * @return \Cassandra\Rows|null loads and returns next result page
+     */
+    public function nextPage($timeout = null)
+    {
+    }
+
+    /**
+     * Get the next page of results asynchronously.
+     *
+     * @return \Cassandra\Future returns future of the next result page
+     */
+    public function nextPageAsync(): \Cassandra\Future
+    {
+    }
+
+    /**
+     * Returns the raw paging state token.
+     *
+     * @return string
+     */
+    public function pagingStateToken(): string
+    {
+    }
+
+    /**
+     * Get the first row.
+     *
+     * @return array|null returns first row if any
+     */
+    public function first()
+    {
+    }
 
     /**
      * Returns the number of rows.
@@ -34,16 +83,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \Countable::count()
      */
-    public function count() { }
-
-    /**
-     * Resets the rows iterator.
-     *
-     * @return void
-     *
-     * @see \Iterator::rewind()
-     */
-    public function rewind() { }
+    public function count(): int
+    {
+    }
 
     /**
      * Returns current row.
@@ -52,7 +94,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \Iterator::current()
      */
-    public function current() { }
+    public function current(): array
+    {
+    }
 
     /**
      * Returns current index.
@@ -61,7 +105,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \Iterator::key()
      */
-    public function key() { }
+    public function key(): int
+    {
+    }
 
     /**
      * Advances the rows iterator by one.
@@ -70,7 +116,20 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \Iterator::next()
      */
-    public function next() { }
+    public function next(): void
+    {
+    }
+
+    /**
+     * Resets the rows iterator.
+     *
+     * @return void
+     *
+     * @see \Iterator::rewind()
+     */
+    public function rewind(): void
+    {
+    }
 
     /**
      * Returns existence of more rows being available.
@@ -79,7 +138,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \Iterator::valid()
      */
-    public function valid() { }
+    public function valid(): bool
+    {
+    }
 
     /**
      * Returns existence of a given row.
@@ -90,7 +151,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \ArrayAccess::offsetExists()
      */
-    public function offsetExists($offset) { }
+    public function offsetExists(int $offset): bool
+    {
+    }
 
     /**
      * Returns a row at given index.
@@ -101,10 +164,12 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \ArrayAccess::offsetGet()
      */
-    public function offsetGet($offset) { }
+    public function offsetGet(int $offset)
+    {
+    }
 
     /**
-     * Sets a row at given index.
+     * Assigns a value to the specified offset.
      *
      * @param int $offset row index
      * @param array $value row value
@@ -115,7 +180,9 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \ArrayAccess::offsetSet()
      */
-    public function offsetSet($offset, $value) { }
+    public function offsetSet(int $offset, array $value): void
+    {
+    }
 
     /**
      * Removes a row at given index.
@@ -128,43 +195,7 @@ final class Rows implements \Iterator, \ArrayAccess {
      *
      * @see \ArrayAccess::offsetUnset()
      */
-    public function offsetUnset($offset) { }
-
-    /**
-     * Check for the last page when paging.
-     *
-     * @return bool whether this is the last page or not
-     */
-    public function isLastPage() { }
-
-    /**
-     * Get the next page of results.
-     *
-     * @param float|null $timeout
-     *
-     * @return \Cassandra\Rows|null loads and returns next result page
-     */
-    public function nextPage($timeout) { }
-
-    /**
-     * Get the next page of results asynchronously.
-     *
-     * @return \Cassandra\Future returns future of the next result page
-     */
-    public function nextPageAsync() { }
-
-    /**
-     * Returns the raw paging state token.
-     *
-     * @return string
-     */
-    public function pagingStateToken() { }
-
-    /**
-     * Get the first row.
-     *
-     * @return array|null returns first row if any
-     */
-    public function first() { }
-
+    public function offsetUnset(int $offset): void
+    {
+    }
 }

@@ -23,23 +23,27 @@ namespace Cassandra\Cluster;
  *
  * @see \Cassandra::cluster()
  */
-final class Builder {
-
+final class Builder
+{
     /**
      * Returns a Cluster Instance.
      *
      * @return \Cassandra\Cluster Cluster instance
      */
-    public function build() { }
+    public function build(): \Cassandra\Cluster
+    {
+    }
 
     /**
      * Configures default consistency for all requests.
      *
-     * @param int $consistency A consistency level, must be one of Cassandra::CONSISTENCY_* values
+     * @param int $consistency A consistency level, must be one of \Cassandra::CONSISTENCY_* values
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withDefaultConsistency($consistency) { }
+    public function withDefaultConsistency(int $consistency): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures default page size for all results.
@@ -49,7 +53,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withDefaultPageSize($pageSize) { }
+    public function withDefaultPageSize($pageSize): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures default timeout for future resolution in blocking operations
@@ -59,7 +65,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withDefaultTimeout($timeout) { }
+    public function withDefaultTimeout($timeout): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures the initial endpoints. Note that the driver will
@@ -69,7 +77,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withContactPoints($host) { }
+    public function withContactPoints(string $host): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Specify a different port to be used when connecting to the cluster.
@@ -80,14 +90,18 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withPort($port) { }
+    public function withPort(int $port): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures this cluster to use a round robin load balancing policy.
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withRoundRobinLoadBalancingPolicy() { }
+    public function withRoundRobinLoadBalancingPolicy(): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures this cluster to use a datacenter aware round robin load balancing policy.
@@ -98,7 +112,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withDatacenterAwareRoundRobinLoadBalancingPolicy($localDatacenter, $hostPerRemoteDatacenter, $useRemoteDatacenterForLocalConsistencies) { }
+    public function withDatacenterAwareRoundRobinLoadBalancingPolicy(string $localDatacenter, int $hostPerRemoteDatacenter, bool $useRemoteDatacenterForLocalConsistencies): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Sets the blacklist hosts. Any host in the blacklist will be ignored and
@@ -109,7 +125,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withBlackListHosts($hosts) { }
+    public function withBlackListHosts(string $hosts): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Sets the whitelist hosts. Any host not in the whitelist will be ignored
@@ -120,7 +138,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withWhiteListHosts($hosts) { }
+    public function withWhiteListHosts(string $hosts): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Sets the blacklist datacenters. Any datacenter in the blacklist will be
@@ -132,7 +152,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withBlackListDCs($dcs) { }
+    public function withBlackListDCs(string $dcs): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Sets the whitelist datacenters. Any host not in a whitelisted datacenter
@@ -143,7 +165,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withWhiteListDCs($dcs) { }
+    public function withWhiteListDCs(string $dcs): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enable token aware routing.
@@ -152,7 +176,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withTokenAwareRouting($enabled) { }
+    public function withTokenAwareRouting(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures plain-text authentication.
@@ -162,7 +188,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withCredentials($username, $password) { }
+    public function withCredentials(string $username, string $password): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Timeout used for establishing TCP connections.
@@ -171,7 +199,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withConnectTimeout($timeout) { }
+    public function withConnectTimeout(float $timeout): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Timeout used for waiting for a response from a node.
@@ -180,7 +210,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withRequestTimeout($timeout) { }
+    public function withRequestTimeout(float $timeout): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Set up ssl context.
@@ -189,7 +221,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withSSL($options) { }
+    public function withSSL(\Cassandra\SSLOptions $options): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enable persistent sessions and clusters.
@@ -198,7 +232,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withPersistentSessions($enabled) { }
+    public function withPersistentSessions(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Force the driver to use a specific binary protocol version.
@@ -214,7 +250,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withProtocolVersion($version) { }
+    public function withProtocolVersion(int $version): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Total number of IO threads to use for handling the requests.
@@ -226,7 +264,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withIOThreads($count) { }
+    public function withIOThreads(int $count): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Set the size of connection pools used by the driver. Pools are fixed
@@ -241,7 +281,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withConnectionsPerHost($core, $max) { }
+    public function withConnectionsPerHost(int $core, int $max = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Specify interval in seconds that the driver should wait before attempting
@@ -251,7 +293,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withReconnectInterval($interval) { }
+    public function withReconnectInterval(float $interval): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enables/disables latency-aware routing.
@@ -260,7 +304,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withLatencyAwareRouting($enabled) { }
+    public function withLatencyAwareRouting(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Disables nagle algorithm for lower latency.
@@ -269,7 +315,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withTCPNodelay($enabled) { }
+    public function withTCPNodelay(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enables/disables TCP keepalive.
@@ -281,7 +329,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withTCPKeepalive($delay) { }
+    public function withTCPKeepalive($delay): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Configures the retry policy.
@@ -290,7 +340,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withRetryPolicy($policy) { }
+    public function withRetryPolicy(\Cassandra\RetryPolicy $policy): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Sets the timestamp generator.
@@ -300,7 +352,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withTimestampGenerator($generator) { }
+    public function withTimestampGenerator(\Cassandra\TimestampGenerator $generator): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enables/disables Schema Metadata.
@@ -314,7 +368,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withSchemaMetadata($enabled) { }
+    public function withSchemaMetadata(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enables/disables Hostname Resolution.
@@ -331,7 +387,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withHostnameResolution($enabled) { }
+    public function withHostnameResolution(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Enables/disables Randomized Contact Points.
@@ -346,7 +404,9 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withRandomizedContactPoints($enabled) { }
+    public function withRandomizedContactPoints(bool $enabled = null): \Cassandra\Cluster\Builder
+    {
+    }
 
     /**
      * Specify interval in seconds that the driver should wait before attempting
@@ -358,6 +418,7 @@ final class Builder {
      *
      * @return \Cassandra\Cluster\Builder self
      */
-    public function withConnectionHeartbeatInterval($interval) { }
-
+    public function withConnectionHeartbeatInterval(float $interval): \Cassandra\Cluster\Builder
+    {
+    }
 }

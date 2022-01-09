@@ -23,101 +23,130 @@ namespace Cassandra;
  *
  * The actual value of a decimal is `$value * pow(10, $scale * -1)`
  */
-final class Decimal implements Value, Numeric {
-
+final class Decimal implements \Stringable, Value, Numeric
+{
     /**
      * Creates a decimal from a given decimal string:
      *
      * ~~~{.php}
      * <?php
-     * $decimal = new Cassandra::Decimal("1313123123.234234234234234234123");
+     * $decimal = new \Cassandra::Decimal("1313123123.234234234234234234123");
      * ~~~
      *
      * @param string $value Any decimal string
      */
-    public function __construct($value) { }
+    public function __construct(string $value)
+    {
+    }
 
     /**
      * String representation of this decimal.
      *
      * @return string Decimal value
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this decimal.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Numeric value of this decimal as string.
      *
      * @return string Numeric value
      */
-    public function value() { }
+    public function value(): string
+    {
+    }
 
     /**
      * Scale of this decimal as int.
      *
      * @return int Scale
      */
-    public function scale() { }
+    public function scale(): int
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to add to this one
      * @return \Cassandra\Numeric sum
      */
-    public function add($num) { }
+    public function add(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to subtract from this one
      * @return \Cassandra\Numeric difference
      */
-    public function sub($num) { }
+    public function sub(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to multiply this one by
      * @return \Cassandra\Numeric product
      */
-    public function mul($num) { }
+    public function mul(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to divide this one by
      * @return \Cassandra\Numeric quotient
      */
-    public function div($num) { }
+    public function div(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to divide this one by
      * @return \Cassandra\Numeric remainder
      */
-    public function mod($num) { }
+    public function mod(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric absolute value
      */
-    public function abs() { }
+    public function abs(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric negative value
      */
-    public function neg() { }
+    public function neg(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric square root
      */
-    public function sqrt() { }
+    public function sqrt(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return int this number as int
      */
-    public function toInt() { }
+    public function toInt(): int
+    {
+    }
 
     /**
      * @return float this number as float
      */
-    public function toDouble() { }
-
+    public function toDouble(): float
+    {
+    }
 }

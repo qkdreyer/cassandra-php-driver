@@ -22,37 +22,47 @@ namespace Cassandra\Type;
  * A class that represents the map type. The map type contains two types that
  * represents the types of the key and value contained in the map.
  */
-final class Map extends \Cassandra\Type {
-
-    private function __construct() { }
+final class Map extends \Cassandra\Type
+{
+    private function __construct()
+    {
+    }
 
     /**
      * Returns "map"
      *
      * @return string "map"
      */
-    public function name() { }
+    public function name(): string
+    {
+    }
 
     /**
      * Returns type of keys
      *
      * @return \Cassandra\Type Type of keys
      */
-    public function keyType() { }
+    public function keyType(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns type of values
      *
      * @return \Cassandra\Type Type of values
      */
-    public function valueType() { }
+    public function valueType(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns type representation in CQL, e.g. `map<varchar, int>`
      *
      * @return string Type representation in CQL
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * Creates a new Map from the given values.
@@ -83,6 +93,7 @@ final class Map extends \Cassandra\Type {
      *
      * @return \Cassandra\Map A set with given values.
      */
-    public function create($value) { }
-
+    public function create(mixed $value = null): \Cassandra\Map
+    {
+    }
 }

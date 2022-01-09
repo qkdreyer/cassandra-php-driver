@@ -21,8 +21,8 @@ namespace Cassandra;
 /**
  * A future that always resolves in a value.
  */
-final class FutureValue implements Future {
-
+final class FutureValue implements Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -33,6 +33,7 @@ final class FutureValue implements Future {
      *
      * @return mixed A value
      */
-    public function get($timeout) { }
-
+    public function get($timeout = null): mixed
+    {
+    }
 }

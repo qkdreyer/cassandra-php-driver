@@ -15,15 +15,15 @@ BatchStatement:
      * `Cassandra::BATCH_COUNTER`  - this batch is used for counter updates,
        which are, unlike other writes, not idempotent.
 
-    @see Cassandra::BATCH_LOGGED
-    @see Cassandra::BATCH_UNLOGGED
-    @see Cassandra::BATCH_COUNTER
+    @see \Cassandra::BATCH_LOGGED
+    @see \Cassandra::BATCH_UNLOGGED
+    @see \Cassandra::BATCH_COUNTER
   methods:
     __construct:
       comment: Creates a new batch statement.
       params:
         type:
-          comment: 'must be one of Cassandra::BATCH_* (default: Cassandra::BATCH_LOGGED).'
+          comment: 'must be one of \Cassandra::BATCH_* (default: \Cassandra::BATCH_LOGGED).'
           type: int
     add:
       comment: |-

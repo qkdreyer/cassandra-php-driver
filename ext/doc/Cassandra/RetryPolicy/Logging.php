@@ -21,13 +21,14 @@ namespace Cassandra\RetryPolicy;
 /**
  * A retry policy that logs the decisions of its child policy.
  */
-final class Logging implements \Cassandra\RetryPolicy {
-
+final class Logging implements \Cassandra\RetryPolicy
+{
     /**
      * Creates a new Logging retry policy.
      *
      * @param \Cassandra\RetryPolicy $childPolicy Any retry policy other than Logging
      */
-    public function __construct($childPolicy) { }
-
+    public function __construct(\Cassandra\RetryPolicy $childPolicy)
+    {
+    }
 }

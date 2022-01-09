@@ -11,7 +11,7 @@ Decimal:
 
         ~~~{.php}
         <?php
-        $decimal = new Cassandra::Decimal("1313123123.234234234234234234123");
+        $decimal = new \Cassandra::Decimal("1313123123.234234234234234234123");
         ~~~
       params:
         value:

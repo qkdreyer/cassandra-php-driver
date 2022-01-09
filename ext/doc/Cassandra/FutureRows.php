@@ -21,10 +21,10 @@ namespace Cassandra;
 /**
  * This future results is resolved with Rows.
  *
- * @see Session::executeAsync()
+ * @see \Cassandra\Session::executeAsync()
  */
-final class FutureRows implements Future {
-
+final class FutureRows implements Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -35,6 +35,7 @@ final class FutureRows implements Future {
      *
      * @return \Cassandra\Rows|null The result set
      */
-    public function get($timeout) { }
-
+    public function get($timeout = null)
+    {
+    }
 }

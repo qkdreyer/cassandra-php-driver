@@ -21,10 +21,10 @@ namespace Cassandra;
 /**
  * A future returned from Session::closeAsync().
  *
- * @see Session::closeAsync()
+ * @see \Cassandra\Session::closeAsync()
  */
-final class FutureClose implements Future {
-
+final class FutureClose implements Future
+{
     /**
      * Waits for a given future resource to resolve and throws errors if any.
      *
@@ -33,8 +33,9 @@ final class FutureClose implements Future {
      * @throws Exception\InvalidArgumentException
      * @throws Exception\TimeoutException
      *
-     * @return null Nothing
+     * @return void Nothing
      */
-    public function get($timeout) { }
-
+    public function get($timeout = null): void
+    {
+    }
 }

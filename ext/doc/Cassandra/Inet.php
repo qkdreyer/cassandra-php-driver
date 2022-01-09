@@ -21,34 +21,41 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `inet` datatype
  */
-final class Inet implements Value {
-
+final class Inet implements \Stringable, Value
+{
     /**
      * Creates a new IPv4 or IPv6 inet address.
      *
      * @param string $address any IPv4 or IPv6 address
      */
-    public function __construct($address) { }
+    public function __construct(string $address)
+    {
+    }
 
     /**
      * Returns the normalized string representation of the address.
      *
      * @return string address
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this inet.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns the normalized string representation of the address.
      *
      * @return string address
      */
-    public function address() { }
-
+    public function address(): string
+    {
+    }
 }

@@ -3,5 +3,5 @@ SSLOptions:
   comment: |-
     SSL options for Cluster.
 
-    @see SSLOptions\Builder
+    @see \Cassandra\SSLOptions\Builder
 ...

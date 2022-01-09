@@ -21,10 +21,10 @@ namespace Cassandra;
 /**
  * All statements implement this common interface.
  *
- * @see SimpleStatement
- * @see PreparedStatement
- * @see BatchStatement
+ * @see \Cassandra\SimpleStatement
+ * @see \Cassandra\PreparedStatement
+ * @see \Cassandra\BatchStatement
  */
-interface Statement {
-
+interface Statement
+{
 }

@@ -21,28 +21,34 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `list` datatype
  */
-final class Collection implements Value, \Countable, \Iterator {
-
+final class Collection implements Value, \Countable, \Iterator
+{
     /**
      * Creates a new collection of a given type.
      *
      * @param \Cassandra\Type $type
      */
-    public function __construct($type) { }
+    public function __construct(\Cassandra\Type $type)
+    {
+    }
 
     /**
      * The type of this collection.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Array of values in this collection.
      *
      * @return array values
      */
-    public function values() { }
+    public function values(): array
+    {
+    }
 
     /**
      * Adds one or more values to this collection.
@@ -51,7 +57,9 @@ final class Collection implements Value, \Countable, \Iterator {
      *
      * @return int total number of values in this collection
      */
-    public function add($value) { }
+    public function add(mixed $value): int
+    {
+    }
 
     /**
      * Retrieves the value at a given index.
@@ -60,7 +68,9 @@ final class Collection implements Value, \Countable, \Iterator {
      *
      * @return mixed Value or null
      */
-    public function get($index) { }
+    public function get(int $index): mixed
+    {
+    }
 
     /**
      * Finds index of a value in this collection.
@@ -69,49 +79,9 @@ final class Collection implements Value, \Countable, \Iterator {
      *
      * @return int Index or null
      */
-    public function find($value) { }
-
-    /**
-     * Total number of elements in this collection
-     *
-     * @return int count
-     */
-    public function count() { }
-
-    /**
-     * Current element for iteration
-     *
-     * @return mixed current element
-     */
-    public function current() { }
-
-    /**
-     * Current key for iteration
-     *
-     * @return int current key
-     */
-    public function key() { }
-
-    /**
-     * Move internal iterator forward
-     *
-     * @return void
-     */
-    public function next() { }
-
-    /**
-     * Check whether a current value exists
-     *
-     * @return bool
-     */
-    public function valid() { }
-
-    /**
-     * Rewind internal iterator
-     *
-     * @return void
-     */
-    public function rewind() { }
+    public function find(mixed $value): int
+    {
+    }
 
     /**
      * Deletes the value at a given index
@@ -120,6 +90,61 @@ final class Collection implements Value, \Countable, \Iterator {
      *
      * @return bool Whether the value at a given index is correctly removed
      */
-    public function remove($index) { }
+    public function remove(int $index): bool
+    {
+    }
 
+    /**
+     * Total number of elements in this collection
+     *
+     * @return int count
+     */
+    public function count(): int
+    {
+    }
+
+    /**
+     * Current element for iteration
+     *
+     * @return mixed current element
+     */
+    public function current(): mixed
+    {
+    }
+
+    /**
+     * Current key for iteration
+     *
+     * @return int current key
+     */
+    public function key(): int
+    {
+    }
+
+    /**
+     * Move internal iterator forward
+     *
+     * @return void
+     */
+    public function next(): void
+    {
+    }
+
+    /**
+     * Rewind internal iterator
+     *
+     * @return void
+     */
+    public function rewind(): void
+    {
+    }
+
+    /**
+     * Check whether a current value exists
+     *
+     * @return bool
+     */
+    public function valid(): bool
+    {
+    }
 }

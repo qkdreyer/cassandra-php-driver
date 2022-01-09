@@ -21,13 +21,12 @@ namespace Cassandra;
 /**
  * A class for representing custom values.
  */
-abstract class Custom implements Value {
-
+abstract class Custom implements Value
+{
     /**
      * The type of this value.
      *
      * @return \Cassandra\Type\Custom
      */
-    public abstract function type();
-
+    public abstract function type(): \Cassandra\Type\Custom;
 }

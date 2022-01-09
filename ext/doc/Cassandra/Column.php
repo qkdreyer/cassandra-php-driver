@@ -21,55 +21,54 @@ namespace Cassandra;
 /**
  * A PHP representation of a column
  */
-interface Column {
-
+interface Column
+{
     /**
      * Returns the name of the column.
      *
      * @return string Name of the column or null
      */
-    public function name();
+    public function name(): string;
 
     /**
      * Returns the type of the column.
      *
      * @return \Cassandra\Type Type of the column
      */
-    public function type();
+    public function type(): \Cassandra\Type;
 
     /**
      * Returns whether the column is in descending or ascending order.
      *
      * @return bool Whether the column is stored in descending order.
      */
-    public function isReversed();
+    public function isReversed(): bool;
 
     /**
      * Returns true for static columns.
      *
      * @return bool Whether the column is static
      */
-    public function isStatic();
+    public function isStatic(): bool;
 
     /**
      * Returns true for frozen columns.
      *
      * @return bool Whether the column is frozen
      */
-    public function isFrozen();
+    public function isFrozen(): bool;
 
     /**
      * Returns name of the index if defined.
      *
      * @return string Name of the index if defined or null
      */
-    public function indexName();
+    public function indexName(): string;
 
     /**
      * Returns index options if present.
      *
      * @return string Index options if present or null
      */
-    public function indexOptions();
-
+    public function indexOptions(): string;
 }

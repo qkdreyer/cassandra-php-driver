@@ -21,41 +21,50 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `uuid` datatype
  */
-final class Uuid implements Value, UuidInterface {
-
+final class Uuid implements \Stringable, Value, UuidInterface
+{
     /**
      * Creates a uuid from a given uuid string or a random one.
      *
      * @param string $uuid A uuid string
      */
-    public function __construct($uuid) { }
+    public function __construct(string $uuid = null)
+    {
+    }
 
     /**
      * Returns this uuid as string.
      *
      * @return string uuid
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this uuid.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns this uuid as string.
      *
      * @return string uuid
      */
-    public function uuid() { }
+    public function uuid(): string
+    {
+    }
 
     /**
      * Returns the version of this uuid.
      *
      * @return int version of this uuid
      */
-    public function version() { }
-
+    public function version(): int
+    {
+    }
 }

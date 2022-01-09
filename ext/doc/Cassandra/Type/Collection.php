@@ -22,30 +22,38 @@ namespace Cassandra\Type;
  * A class that represents the list type. The list type contains the type of the
  * elements contain in the list.
  */
-final class Collection extends \Cassandra\Type {
-
-    private function __construct() { }
+final class Collection extends \Cassandra\Type
+{
+    private function __construct()
+    {
+    }
 
     /**
      * Returns "list"
      *
      * @return string "list"
      */
-    public function name() { }
+    public function name(): string
+    {
+    }
 
     /**
      * Returns type of values
      *
      * @return \Cassandra\Type Type of values
      */
-    public function valueType() { }
+    public function valueType(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns type representation in CQL, e.g. `list<varchar>`
      *
      * @return string Type representation in CQL
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * Creates a new Collection from the given values.  When no values
@@ -59,6 +67,7 @@ final class Collection extends \Cassandra\Type {
      *
      * @return \Cassandra\Collection A list with given values.
      */
-    public function create($value) { }
-
+    public function create(mixed $value = null): \Cassandra\Collection
+    {
+    }
 }

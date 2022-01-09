@@ -21,41 +21,50 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `blob` datatype
  */
-final class Blob implements Value {
-
+final class Blob implements \Stringable, Value
+{
     /**
      * Creates a new bytes array.
      *
      * @param string $bytes any bytes
      */
-    public function __construct($bytes) { }
+    public function __construct(string $bytes)
+    {
+    }
 
     /**
      * Returns bytes as a hex string.
      *
      * @return string bytes as hexadecimal string
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this blob.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns bytes as a hex string.
      *
      * @return string bytes as hexadecimal string
      */
-    public function bytes() { }
+    public function bytes(): string
+    {
+    }
 
     /**
      * Returns bytes as a binary string.
      *
      * @return string bytes as binary string
      */
-    public function toBinaryString() { }
-
+    public function toBinaryString(): string
+    {
+    }
 }

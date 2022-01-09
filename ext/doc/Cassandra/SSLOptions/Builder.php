@@ -24,14 +24,16 @@ namespace Cassandra\SSLOptions;
  * @see \Cassandra::ssl()
  * @see \Cluster\Builder::withSSL()
  */
-final class Builder {
-
+final class Builder
+{
     /**
      * Builds SSL options.
      *
      * @return \Cassandra\SSLOptions ssl options configured accordingly.
      */
-    public function build() { }
+    public function build(): \Cassandra\SSLOptions
+    {
+    }
 
     /**
      * Adds a trusted certificate. This is used to verify node's identity.
@@ -42,7 +44,9 @@ final class Builder {
      *
      * @return \Cassandra\SSLOptions\Builder self
      */
-    public function withTrustedCerts($path) { }
+    public function withTrustedCerts(string $path): \Cassandra\SSLOptions\Builder
+    {
+    }
 
     /**
      * Disable certificate verification.
@@ -53,7 +57,9 @@ final class Builder {
      *
      * @return \Cassandra\SSLOptions\Builder self
      */
-    public function withVerifyFlags($flags) { }
+    public function withVerifyFlags(int $flags): \Cassandra\SSLOptions\Builder
+    {
+    }
 
     /**
      * Set client-side certificate chain.
@@ -67,7 +73,9 @@ final class Builder {
      *
      * @return \Cassandra\SSLOptions\Builder self
      */
-    public function withClientCert($path) { }
+    public function withClientCert(string $path): \Cassandra\SSLOptions\Builder
+    {
+    }
 
     /**
      * Set client-side private key. This is used to authenticate the client on
@@ -80,6 +88,7 @@ final class Builder {
      *
      * @return \Cassandra\SSLOptions\Builder self
      */
-    public function withPrivateKey($path, $passphrase) { }
-
+    public function withPrivateKey(string $path, $passphrase = null): \Cassandra\SSLOptions\Builder
+    {
+    }
 }

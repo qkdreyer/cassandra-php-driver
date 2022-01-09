@@ -21,11 +21,11 @@ namespace Cassandra;
 /**
  * A session is used to prepare and execute statements.
  *
- * @see Cluster::connect()
- * @see Cluster::connectAsync()
+ * @see \Cassandra\Cluster::connect()
+ * @see \Cassandra\Cluster::connectAsync()
  */
-interface Session {
-
+interface Session
+{
     /**
      * Execute a query.
      *
@@ -48,7 +48,7 @@ interface Session {
      *
      * @return \Cassandra\Rows A collection of rows.
      */
-    public function execute($statement, $options);
+    public function execute($statement, $options = null): \Cassandra\Rows;
 
     /**
      * Execute a query asynchronously. This method returns immediately, but
@@ -59,9 +59,9 @@ interface Session {
      *
      * @return \Cassandra\FutureRows A future that can be used to retrieve the result.
      *
-     * @see Session::execute() for valid execution options
+     * @see \Cassandra\Session::execute() for valid execution options
      */
-    public function executeAsync($statement, $options);
+    public function executeAsync($statement, $options = null): \Cassandra\FutureRows;
 
     /**
      * Prepare a query for execution.
@@ -73,9 +73,9 @@ interface Session {
      *
      * @return \Cassandra\PreparedStatement A prepared statement that can be bound with parameters and executed.
      *
-     * @see Session::execute() for valid execution options
+     * @see \Cassandra\Session::execute() for valid execution options
      */
-    public function prepare($cql, $options);
+    public function prepare(string $cql, $options = null): \Cassandra\PreparedStatement;
 
     /**
      * Asynchronously prepare a query for execution.
@@ -85,40 +85,39 @@ interface Session {
      *
      * @return \Cassandra\FuturePreparedStatement A future that can be used to retrieve the prepared statement.
      *
-     * @see Session::execute() for valid execution options
+     * @see \Cassandra\Session::execute() for valid execution options
      */
-    public function prepareAsync($cql, $options);
+    public function prepareAsync(string $cql, $options = null): \Cassandra\FuturePreparedStatement;
 
     /**
      * Close the session and all its connections.
      *
-     * @param double $timeout The amount of time in seconds to wait for the session to close.
+     * @param float $timeout The amount of time in seconds to wait for the session to close.
      *
      * @throws Exception
      *
-     * @return null Nothing.
+     * @return void Nothing.
      */
-    public function close($timeout);
+    public function close(float $timeout = null): void;
 
     /**
      * Asynchronously close the session and all its connections.
      *
      * @return \Cassandra\FutureClose A future that can be waited on.
      */
-    public function closeAsync();
+    public function closeAsync(): \Cassandra\FutureClose;
 
     /**
      * Get performance and diagnostic metrics.
      *
      * @return array Performance/Diagnostic metrics.
      */
-    public function metrics();
+    public function metrics(): array;
 
     /**
      * Get a snapshot of the cluster's current schema.
      *
      * @return \Cassandra\Schema A snapshot of the cluster's schema.
      */
-    public function schema();
-
+    public function schema(): \Cassandra\Schema;
 }

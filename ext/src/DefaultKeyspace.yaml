@@ -75,7 +75,7 @@ DefaultKeyspace:
           type: string|\Cassandra\Type
       return:
         comment: ""
-        type: \Cassandra\Function|null
+        type: \Cassandra\Function_|null
     functions:
       comment: ""
       return:

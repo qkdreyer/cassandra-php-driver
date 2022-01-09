@@ -21,28 +21,34 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `set` datatype
  */
-final class Set implements Value, \Countable, \Iterator {
-
+final class Set implements Value, \Countable, \Iterator
+{
     /**
      * Creates a new collection of a given type.
      *
      * @param \Cassandra\Type $type
      */
-    public function __construct($type) { }
+    public function __construct(\Cassandra\Type $type)
+    {
+    }
 
     /**
      * The type of this set.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Array of values in this set.
      *
      * @return array values
      */
-    public function values() { }
+    public function values(): array
+    {
+    }
 
     /**
      * Adds a value to this set.
@@ -51,7 +57,9 @@ final class Set implements Value, \Countable, \Iterator {
      *
      * @return bool whether the value has been added
      */
-    public function add($value) { }
+    public function add(mixed $value): bool
+    {
+    }
 
     /**
      * Returns whether a value is in this set.
@@ -60,7 +68,9 @@ final class Set implements Value, \Countable, \Iterator {
      *
      * @return bool whether the value is in the set
      */
-    public function has($value) { }
+    public function has(mixed $value): bool
+    {
+    }
 
     /**
      * Removes a value to this set.
@@ -69,48 +79,61 @@ final class Set implements Value, \Countable, \Iterator {
      *
      * @return bool whether the value has been removed
      */
-    public function remove($value) { }
+    public function remove(mixed $value): bool
+    {
+    }
 
     /**
      * Total number of elements in this set
      *
      * @return int count
      */
-    public function count() { }
+    public function count(): int
+    {
+    }
 
     /**
      * Current element for iteration
      *
      * @return mixed current element
      */
-    public function current() { }
+    public function current(): mixed
+    {
+    }
 
     /**
      * Current key for iteration
      *
      * @return int current key
      */
-    public function key() { }
+    public function key(): int
+    {
+    }
 
     /**
      * Move internal iterator forward
      *
      * @return void
      */
-    public function next() { }
-
-    /**
-     * Check whether a current value exists
-     *
-     * @return bool
-     */
-    public function valid() { }
+    public function next(): void
+    {
+    }
 
     /**
      * Rewind internal iterator
      *
      * @return void
      */
-    public function rewind() { }
+    public function rewind(): void
+    {
+    }
 
+    /**
+     * Check whether a current value exists
+     *
+     * @return bool
+     */
+    public function valid(): bool
+    {
+    }
 }

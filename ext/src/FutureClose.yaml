@@ -3,7 +3,7 @@ FutureClose:
   comment: |-
     A future returned from Session::closeAsync().
 
-    @see Session::closeAsync()
+    @see \Cassandra\Session::closeAsync()
   methods:
     get:
       comment: ""
@@ -13,5 +13,5 @@ FutureClose:
           type: int|double|null
       return:
         comment: Nothing
-        type: "null"
+        type: void
 ...

@@ -21,101 +21,132 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `smallint` datatype.
  */
-final class Smallint implements Value, Numeric {
-
+final class Smallint implements \Stringable, Value, Numeric
+{
     /**
      * Creates a new 16-bit signed integer.
      *
      * @param int|double|string $value The value as an integer, double or string
      */
-    public function __construct($value) { }
+    public function __construct($value)
+    {
+    }
 
     /**
      * @return string
      */
-    public function __toString() { }
+    public function __toString(): string
+    {
+    }
 
     /**
      * The type of this value (smallint).
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * Returns the integer value.
      *
      * @return int integer value
      */
-    public function value() { }
+    public function value(): int
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to add to this one
      * @return \Cassandra\Numeric sum
      */
-    public function add($num) { }
+    public function add(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to subtract from this one
      * @return \Cassandra\Numeric difference
      */
-    public function sub($num) { }
+    public function sub(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to multiply this one by
      * @return \Cassandra\Numeric product
      */
-    public function mul($num) { }
+    public function mul(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to divide this one by
      * @return \Cassandra\Numeric quotient
      */
-    public function div($num) { }
+    public function div(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @param \Cassandra\Numeric $num a number to divide this one by
      * @return \Cassandra\Numeric remainder
      */
-    public function mod($num) { }
+    public function mod(\Cassandra\Numeric $num): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric absolute value
      */
-    public function abs() { }
+    public function abs(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric negative value
      */
-    public function neg() { }
+    public function neg(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return \Cassandra\Numeric square root
      */
-    public function sqrt() { }
+    public function sqrt(): \Cassandra\Numeric
+    {
+    }
 
     /**
      * @return int this number as int
      */
-    public function toInt() { }
+    public function toInt(): int
+    {
+    }
 
     /**
      * @return float this number as float
      */
-    public function toDouble() { }
+    public function toDouble(): float
+    {
+    }
 
     /**
      * Minimum possible Smallint value
      *
      * @return \Cassandra\Smallint minimum value
      */
-    public static function min() { }
+    public static function min(): \Cassandra\Smallint
+    {
+    }
 
     /**
      * Maximum possible Smallint value
      *
      * @return \Cassandra\Smallint maximum value
      */
-    public static function max() { }
-
+    public static function max(): \Cassandra\Smallint
+    {
+    }
 }

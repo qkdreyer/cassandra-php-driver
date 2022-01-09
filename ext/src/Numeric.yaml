@@ -4,10 +4,10 @@ Numeric:
     Common interface implemented by all numeric types, providing basic
     arithmetic functions.
 
-    @see Bigint
-    @see Decimal
-    @see Float
-    @see Varint
+    @see \Cassandra\Bigint
+    @see \Cassandra\Decimal
+    @see \Cassandra\Float
+    @see \Cassandra\Varint
   methods:
     add:
       comment: ""

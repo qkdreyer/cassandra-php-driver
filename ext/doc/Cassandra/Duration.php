@@ -21,40 +21,51 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `duration` datatype
  */
-final class Duration implements Value {
-
+final class Duration implements \Stringable, Value
+{
     /**
      * @param long|double|string|\Cassandra\Bigint $months Months attribute of the duration.
      * @param long|double|string|\Cassandra\Bigint $days Days attribute of the duration.
      * @param long|double|string|\Cassandra\Bigint $nanos Nanos attribute of the duration.
      */
-    public function __construct($months, $days, $nanos) { }
+    public function __construct($months, $days, $nanos)
+    {
+    }
 
     /**
      * The type of represented by the value.
      *
      * @return \Cassandra\Type the Cassandra type for Duration
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * @return string the months attribute of this Duration
      */
-    public function months() { }
+    public function months(): string
+    {
+    }
 
     /**
      * @return string the days attribute of this Duration
      */
-    public function days() { }
+    public function days(): string
+    {
+    }
 
     /**
      * @return string the nanoseconds attribute of this Duration
      */
-    public function nanos() { }
+    public function nanos(): string
+    {
+    }
 
     /**
      * @return string string representation of this Duration; may be used as a literal parameter in CQL queries.
      */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

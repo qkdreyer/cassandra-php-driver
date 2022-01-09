@@ -21,14 +21,16 @@ namespace Cassandra;
 /**
  * A PHP representation of a materialized view
  */
-final class DefaultMaterializedView extends MaterializedView  {
-
+final class DefaultMaterializedView extends MaterializedView
+{
     /**
      * Returns the name of this view
      *
      * @return string Name of the view
      */
-    public function name() { }
+    public function name(): string
+    {
+    }
 
     /**
      * Return a view's option by name
@@ -37,133 +39,171 @@ final class DefaultMaterializedView extends MaterializedView  {
      *
      * @return \Cassandra\Value Value of an option by name
      */
-    public function option($name) { }
+    public function option(string $name): \Cassandra\Value
+    {
+    }
 
     /**
      * Returns all the view's options
      *
      * @return array A dictionary of string and Value pairs of the
      */
-    public function options() { }
+    public function options(): array
+    {
+    }
 
     /**
      * Description of the view, if any
      *
      * @return string Table description or null
      */
-    public function comment() { }
+    public function comment(): string
+    {
+    }
 
     /**
      * Returns read repair chance
      *
      * @return float Read repair chance
      */
-    public function readRepairChance() { }
+    public function readRepairChance(): float
+    {
+    }
 
     /**
      * Returns local read repair chance
      *
      * @return float Local read repair chance
      */
-    public function localReadRepairChance() { }
+    public function localReadRepairChance(): float
+    {
+    }
 
     /**
      * Returns GC grace seconds
      *
      * @return int GC grace seconds
      */
-    public function gcGraceSeconds() { }
+    public function gcGraceSeconds(): int
+    {
+    }
 
     /**
      * Returns caching options
      *
      * @return string Caching options
      */
-    public function caching() { }
+    public function caching(): string
+    {
+    }
 
     /**
      * Returns bloom filter FP chance
      *
      * @return float Bloom filter FP chance
      */
-    public function bloomFilterFPChance() { }
+    public function bloomFilterFPChance(): float
+    {
+    }
 
     /**
      * Returns memtable flush period in milliseconds
      *
      * @return int Memtable flush period in milliseconds
      */
-    public function memtableFlushPeriodMs() { }
+    public function memtableFlushPeriodMs(): int
+    {
+    }
 
     /**
      * Returns default TTL.
      *
      * @return int Default TTL.
      */
-    public function defaultTTL() { }
+    public function defaultTTL(): int
+    {
+    }
 
     /**
      * Returns speculative retry.
      *
      * @return string Speculative retry.
      */
-    public function speculativeRetry() { }
+    public function speculativeRetry(): string
+    {
+    }
 
     /**
      * Returns index interval
      *
      * @return int Index interval
      */
-    public function indexInterval() { }
+    public function indexInterval(): int
+    {
+    }
 
     /**
      * Returns compaction strategy class name
      *
      * @return string Compaction strategy class name
      */
-    public function compactionStrategyClassName() { }
+    public function compactionStrategyClassName(): string
+    {
+    }
 
     /**
      * Returns compaction strategy options
      *
      * @return \Cassandra\Map Compaction strategy options
      */
-    public function compactionStrategyOptions() { }
+    public function compactionStrategyOptions(): \Cassandra\Map
+    {
+    }
 
     /**
      * Returns compression parameters
      *
      * @return \Cassandra\Map Compression parameters
      */
-    public function compressionParameters() { }
+    public function compressionParameters(): \Cassandra\Map
+    {
+    }
 
     /**
      * Returns whether or not the `populate_io_cache_on_flush` is true
      *
      * @return bool Value of `populate_io_cache_on_flush` or null
      */
-    public function populateIOCacheOnFlush() { }
+    public function populateIOCacheOnFlush(): bool
+    {
+    }
 
     /**
      * Returns whether or not the `replicate_on_write` is true
      *
      * @return bool Value of `replicate_on_write` or null
      */
-    public function replicateOnWrite() { }
+    public function replicateOnWrite(): bool
+    {
+    }
 
     /**
      * Returns the value of `max_index_interval`
      *
      * @return int Value of `max_index_interval` or null
      */
-    public function maxIndexInterval() { }
+    public function maxIndexInterval(): int
+    {
+    }
 
     /**
      * Returns the value of `min_index_interval`
      *
      * @return int Value of `min_index_interval` or null
      */
-    public function minIndexInterval() { }
+    public function minIndexInterval(): int
+    {
+    }
 
     /**
      * Returns column by name
@@ -172,46 +212,59 @@ final class DefaultMaterializedView extends MaterializedView  {
      *
      * @return \Cassandra\Column Column instance
      */
-    public function column($name) { }
+    public function column(string $name): \Cassandra\Column
+    {
+    }
 
     /**
      * Returns all columns in this view
      *
      * @return array A list of Column instances
      */
-    public function columns() { }
+    public function columns(): array
+    {
+    }
 
     /**
      * Returns the partition key columns of the view
      *
      * @return array A list of of Column instances
      */
-    public function partitionKey() { }
+    public function partitionKey(): array
+    {
+    }
 
     /**
      * Returns both the partition and clustering key columns of the view
      *
      * @return array A list of of Column instances
      */
-    public function primaryKey() { }
+    public function primaryKey(): array
+    {
+    }
 
     /**
      * Returns the clustering key columns of the view
      *
      * @return array A list of of Column instances
      */
-    public function clusteringKey() { }
+    public function clusteringKey(): array
+    {
+    }
 
     /**
      * @return array A list of cluster column orders ('asc' and 'desc')
      */
-    public function clusteringOrder() { }
+    public function clusteringOrder(): array
+    {
+    }
 
     /**
      * Returns the base table of the view
      *
      * @return \Cassandra\Table Base table of the view
      */
-    public function baseTable() { }
-
+    public function baseTable(): \Cassandra\Table
+    {
+    }
 }

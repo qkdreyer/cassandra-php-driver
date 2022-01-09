@@ -75,7 +75,7 @@ Keyspace:
           type: string|\Cassandra\Type
       return:
         comment: A function or null
-        type: \Cassandra\Function|null
+        type: \Cassandra\Function_|null
     functions:
       comment: Get all functions
       return:

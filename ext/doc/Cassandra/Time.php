@@ -21,36 +21,45 @@ namespace Cassandra;
 /**
  * A PHP representation of the CQL `time` type.
  */
-final class Time implements Value {
-
+final class Time implements \Stringable, Value
+{
     /**
      * Creates a new Time object
      *
      * @param int|string $nanoseconds Number of nanoseconds since last microsecond
      */
-    public function __construct($nanoseconds) { }
+    public function __construct($nanoseconds = null)
+    {
+    }
 
     /**
      * The type of this date.
      *
      * @return \Cassandra\Type
      */
-    public function type() { }
+    public function type(): \Cassandra\Type
+    {
+    }
 
     /**
      * @return int
      */
-    public function seconds() { }
+    public function seconds(): int
+    {
+    }
 
     /**
      * @param \DateTime $datetime
      * @return \Cassandra\Time
      */
-    public static function fromDateTime($datetime) { }
+    public static function fromDateTime(\DateTime $datetime): \Cassandra\Time
+    {
+    }
 
     /**
      * @return string this date in string format: Time(nanoseconds=$nanoseconds)
      */
-    public function __toString() { }
-
+    public function __toString(): string
+    {
+    }
 }

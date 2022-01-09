@@ -3,7 +3,7 @@ FutureRows:
   comment: |-
     This future results is resolved with Rows.
 
-    @see Session::executeAsync()
+    @see \Cassandra\Session::executeAsync()
   methods:
     get:
       comment: ""

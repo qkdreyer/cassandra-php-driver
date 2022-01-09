@@ -3,7 +3,7 @@ DefaultCluster:
   comment: |-
     Default cluster implementation.
 
-    @see Cluster
+    @see \Cassandra\Cluster
   methods:
     connect:
       comment: ""
@@ -12,7 +12,7 @@ DefaultCluster:
           comment: ""
           type: string
         timeout:
-          comment: Optional timeout
+          comment: ""
           type: int
       return:
         comment: ""
